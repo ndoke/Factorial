@@ -1,7 +1,5 @@
 package com.training;
 
-import java.math.BigInteger;
-
 /**
  * {@link Factorial} has methods to calculate the factorial of an
  * integer and return the result in the form of a integer. The
@@ -10,7 +8,6 @@ import java.math.BigInteger;
  * {@link Factorial#factorialUsingIteration(int)} does that iteratively.
  *
  * @author  Nachiket Doke
- * @see     BigInteger
  * @since   1.0
  */
 
