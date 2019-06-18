@@ -3,31 +3,41 @@ package com.training;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.math.BigInteger;
-
 public class FactorialTest {
-    Factorial factorial = new Factorial();
+    private Factorial factorial = new Factorial();
 
     @Test
     public void legalCases() {
-        Assert.assertEquals(factorial.factorialUsingRecursion(0), new BigInteger("1"));
-        Assert.assertEquals(factorial.factorialUsingIteration(0), new BigInteger("1"));
+        Assert.assertEquals(factorial.factorialUsingRecursion(0), 1);
+        Assert.assertEquals(factorial.factorialUsingIteration(0), 1);
 
-        Assert.assertEquals(factorial.factorialUsingRecursion(1), new BigInteger("1"));
-        Assert.assertEquals(factorial.factorialUsingIteration(1), new BigInteger("1"));
+        Assert.assertEquals(factorial.factorialUsingRecursion(1), 1);
+        Assert.assertEquals(factorial.factorialUsingIteration(1), 1);
 
-        Assert.assertEquals(factorial.factorialUsingRecursion(3), new BigInteger("6"));
-        Assert.assertEquals(factorial.factorialUsingIteration(3), new BigInteger("6"));
+        Assert.assertEquals(factorial.factorialUsingRecursion(3), 6);
+        Assert.assertEquals(factorial.factorialUsingIteration(3), 6);
 
-        Assert.assertEquals(factorial.factorialUsingRecursion(35),
-                new BigInteger("10333147966386144929666651337523200000000"));
-        Assert.assertEquals(factorial.factorialUsingIteration(35),
-                new BigInteger("10333147966386144929666651337523200000000"));
+        Assert.assertEquals(factorial.factorialUsingRecursion(12), 479001600);
+        Assert.assertEquals(factorial.factorialUsingRecursion(12), 479001600);
     }
 
     @Test (expectedExceptions = IllegalArgumentException.class)
-    public void illegalCases() {
+    public void illegalCase1() {
         factorial.factorialUsingRecursion(-6);
+    }
+
+    @Test (expectedExceptions = IllegalArgumentException.class)
+    public void illegalCase2() {
         factorial.factorialUsingIteration(-6);
+    }
+
+    @Test (expectedExceptions = IllegalArgumentException.class)
+    public void illegalCase3() {
+        factorial.factorialUsingRecursion(13);
+    }
+
+    @Test (expectedExceptions = IllegalArgumentException.class)
+    public void illegalCase4() {
+        factorial.factorialUsingIteration(13);
     }
 }
