@@ -18,7 +18,8 @@ public class Factorial {
      *
      * @param n element whose factorial is to calculated
      * @return factorial value of specified element
-     * @throws IllegalArgumentException if the specified element value is negative
+     * @throws IllegalArgumentException if the specified element value
+     * is negative or beyond the integer limits
      */
     public int factorialUsingRecursion(int n) {
         if (!isLegalArgument(n)) {
@@ -36,7 +37,8 @@ public class Factorial {
      *
      * @param n element whose factorial is to calculated
      * @return factorial value of specified element
-     * @throws IllegalArgumentException if the specified element value is negative
+     * @throws IllegalArgumentException if the specified element value
+     * is negative or beyond the integer limits
      */
     public int factorialUsingIteration(int n) {
         int result = 1;
